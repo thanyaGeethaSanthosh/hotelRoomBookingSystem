@@ -1,8 +1,11 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const bookingRoutes = require('./routes/bookingRoutes');
 
 const app = express();
-app.use(bodyParser.json());
+
+app.use(express.json());
+
+app.use('/api', bookingRoutes);
 
 const PORT = process.env.PORT || 3000;
 
