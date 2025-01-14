@@ -60,12 +60,6 @@ The **Hotel Room Booking System** is a RESTful API designed to manage hotel room
 ### Cancel Room Booking API
 - **Endpoint**: `DELETE /api/cancel`
 - **Description**: Allow guests to cancel their booking by providing their email and room details.
-- **Response Structure**:
-  ```json
-  {
-      "message": "Booking cancelled"
-  }
-  ```
 
 ---
 
