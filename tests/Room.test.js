@@ -30,4 +30,23 @@ describe('Room', () => {
     expect(room.isAvailable(new Date('2023-12-05'), new Date('2023-12-06'))).toBe(true);
     expect(room.isAvailable(new Date('2023-12-04'), new Date('2023-12-07'))).toBe(false);
   });
+
+  test('should handle no bookings', () => {
+    expect(room.isAvailable(new Date('2023-12-01'), new Date('2023-12-05'))).toBe(true);
+  });
+
+  test('should handle back-to-back bookings', () => {
+    const booking1 = new Booking('John Doe', 'john.doe@example.com', new Date('2023-12-01'), new Date('2023-12-05'), room);
+    room.addBooking(booking1);
+
+    expect(room.isAvailable(new Date('2023-12-05'), new Date('2023-12-10'))).toBe(true);
+    expect(room.isAvailable(new Date('2023-12-04'), new Date('2023-12-05'))).toBe(false);
+  });
+
+  test('should handle overlapping bookings', () => {
+    const booking1 = new Booking('John Doe', 'john.doe@example.com', new Date('2023-12-01'), new Date('2023-12-05'), room);
+    room.addBooking(booking1);
+
+    expect(room.isAvailable(new Date('2023-12-03'), new Date('2023-12-06'))).toBe(false);
+  });
 });

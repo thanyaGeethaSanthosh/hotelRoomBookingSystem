@@ -4,7 +4,7 @@
   "description": "This repository contains a Hotel Room Booking System implemented using Node.js. The system provides APIs for managing hotel room bookings with in-memory storage, ensuring simplicity and ease of use.",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest"
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,16 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
-    "mocha": "^11.0.1",
     "supertest": "^7.0.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
+    ]
   }
 }
