@@ -2,12 +2,12 @@
   "name": "hotelroombookingsystem",
   "version": "1.0.0",
   "description": "This repository contains a Hotel Room Booking System implemented using Node.js. The system provides APIs for managing hotel room bookings with in-memory storage, ensuring simplicity and ease of use.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest --coverage"
   },
   "keywords": [],
-  "author": "",
+  "author": "thaniyakc@gmail.com",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.3",
